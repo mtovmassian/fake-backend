@@ -6,7 +6,7 @@ SCRIPT_DIR=$(readlink -f "${0%/*}")
 readonly SCRIPT_DIR
 readonly HOST_DEFAULT="127.0.0.1"
 readonly PORT_DEFAULT="8080"
-HTTP_RESPONSE_FILE_DEFAULT="${SCRIPT_DIR}/http_response_200.txt"
+HTTP_RESPONSE_FILE_DEFAULT="${SCRIPT_DIR}/static/http_response_200.txt"
 readonly HTTP_RESPONSE_FILE_DEFAULT
 
 serve() {
@@ -25,9 +25,9 @@ Usage: $(basename "$0") [OPTIONS]
 Run a fake server bound to specified host and port and returning a file defined HTTP response
 
 Options:
-    -H, --host          Host (default 127.0.0.1)
-    -p, --port          Port (default 8080)
-    -f, --http-file     HTTP response file (default $SCRIPT_DIR/http_reponse_200.txt)
+    -H, --host <HOST>                       Default 127.0.0.1
+    -p, --port <PORT>                       Default 8080
+    -f, --http-file <HTTP RESPONSE FILE>    Default $HTTP_RESPONSE_FILE_DEFAULT
 
 Example:
     $(basename "$0") -H 127.0.0.1 -p 8081 -f /home/alice/http_response_custom.txt
