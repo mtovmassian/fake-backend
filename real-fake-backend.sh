@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-SCRIPT_DIR=$(readlink -f "${0%/*}")
+SCRIPT_DIR="$(readlink -f "$0" | xargs dirname)"
 readonly SCRIPT_DIR
 readonly HOST_DEFAULT="127.0.0.1"
 readonly PORT_DEFAULT="8080"
